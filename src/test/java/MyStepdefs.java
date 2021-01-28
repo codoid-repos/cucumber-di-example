@@ -20,7 +20,7 @@ public class MyStepdefs {
     HomePage homePage;
 
     @Inject
-    ProductPage ProductPage;
+    ProductPage productPage;
 
     @Inject
     EGiftCardPage eGiftCardPage;
@@ -38,7 +38,7 @@ public class MyStepdefs {
     @Then("I should able to see the Newest eGift card arrivals")
     public void iShouldAbleToSeeTheNewestEGiftCardArrivals() {
         eGiftCardPage.selectFirstProduct();
-        HashMap<String,String> productDetails =  ProductPage.getProductDetails();
+        HashMap<String,String> productDetails =  productPage.getProductDetails();
 
         assertEquals(productDetails.get("MODEL_NUMBER"), "307_US_Email");
 
